@@ -188,7 +188,8 @@ final class Drawer implements DrawerInterface
         try {
             $pixel = $this->getColor($color);
             $line  = new \ImagickDraw();
-
+            
+            $line->setstrokelinecap(\Imagick::LINECAP_SQUARE);
             $line->setStrokeColor($pixel);
             $line->setStrokeWidth(max(1, (int) $thickness));
             $line->setFillColor($pixel);
